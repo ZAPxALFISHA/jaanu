@@ -92,10 +92,15 @@ section{position:relative;z-index:3;padding:110px 22px;}
 .photo:hover{transform:translateY(-12px) scale(1.02);box-shadow:0 40px 90px rgba(255,77,109,.4),inset 0 1px 0 rgba(255,255,255,.08);border-color:rgba(255,77,109,.4);}
 .photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .9s cubic-bezier(.2,.8,.2,1),filter .6s;filter:saturate(1.05);}
 .photo:hover img{transform:scale(1.14);filter:saturate(1.2);}
-.photo::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,2,8,.92),transparent 55%);opacity:.9;transition:.5s;}
+.photo::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,2,8,.92),transparent 55%);opacity:.9;transition:.5s;pointer-events:none;}
 .photo:hover::after{opacity:.55;}
 .photo .cap{position:absolute;bottom:20px;left:20px;right:20px;z-index:2;font-family:'Dancing Script',cursive;font-size:24px;color:#fff;text-shadow:0 3px 18px rgba(0,0,0,.95);}
 .photo .num{position:absolute;top:16px;right:16px;z-index:2;font-size:10px;letter-spacing:2px;font-weight:600;background:rgba(255,77,109,.9);color:#fff;padding:5px 13px;border-radius:20px;backdrop-filter:blur(10px);box-shadow:0 4px 15px rgba(255,77,109,.5);}
+.photo .fallback{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(150deg,#2b0a22,#1a0616);color:#ff8fa3;z-index:1;padding:20px;text-align:center;}
+.photo .fallback .fb-emoji{font-size:56px;margin-bottom:12px;filter:drop-shadow(0 0 20px rgba(255,77,109,.7));}
+.photo .fallback .fb-txt{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:#c98a9d;line-height:1.6;}
+.photo.broken img{display:none;}
+.photo.broken .fallback{display:flex;}
 
 /* VIDEO */
 .video-box{border-radius:32px;overflow:hidden;border:1px solid rgba(255,143,163,.22);box-shadow:0 40px 100px rgba(0,0,0,.65),0 0 0 1px rgba(255,77,109,.08),inset 0 1px 0 rgba(255,255,255,.06);background:#000;position:relative;}
@@ -104,8 +109,13 @@ section{position:relative;z-index:3;padding:110px 22px;}
 .vid{position:relative;border-radius:24px;overflow:hidden;background:#000;border:1px solid rgba(255,143,163,.18);box-shadow:0 25px 60px rgba(0,0,0,.6);transition:transform .7s cubic-bezier(.2,.8,.2,1),box-shadow .7s,border-color .5s;}
 .vid:hover{transform:translateY(-10px);box-shadow:0 40px 90px rgba(255,77,109,.35);border-color:rgba(255,77,109,.45);}
 .vid video{width:100%;display:block;aspect-ratio:9/16;object-fit:cover;background:#000;}
-.vid .vcap{position:absolute;bottom:0;left:0;right:0;padding:20px 20px 16px;background:linear-gradient(to top,rgba(10,2,8,.98),rgba(10,2,8,.6) 60%,transparent);font-family:'Dancing Script',cursive;font-size:22px;color:#fff;pointer-events:none;}
+.vid .vcap{position:absolute;bottom:0;left:0;right:0;padding:20px 20px 16px;background:linear-gradient(to top,rgba(10,2,8,.98),rgba(10,2,8,.6) 60%,transparent);font-family:'Dancing Script',cursive;font-size:22px;color:#fff;pointer-events:none;z-index:3;}
 .vid .vnum{position:absolute;top:14px;left:14px;font-size:10px;letter-spacing:2px;font-weight:600;background:rgba(255,77,109,.9);color:#fff;padding:5px 13px;border-radius:20px;z-index:3;box-shadow:0 4px 15px rgba(255,77,109,.5);backdrop-filter:blur(10px);}
+.vid .vfallback{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;background:linear-gradient(150deg,#2b0a22,#1a0616);color:#ff8fa3;z-index:2;padding:20px;text-align:center;}
+.vid .vfallback .fb-emoji{font-size:52px;margin-bottom:12px;filter:drop-shadow(0 0 20px rgba(255,77,109,.7));}
+.vid .vfallback .fb-txt{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:#c98a9d;line-height:1.6;}
+.vid.broken video{display:none;}
+.vid.broken .vfallback{display:flex;}
 
 /* MESSAGE CARDS */
 .msg-card{background:linear-gradient(145deg,rgba(43,10,34,.75),rgba(26,6,22,.9));backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border:1px solid var(--glass-border);border-radius:28px;padding:clamp(30px,5vw,52px);margin-bottom:28px;position:relative;overflow:hidden;box-shadow:0 25px 70px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.07);transition:.5s cubic-bezier(.2,.8,.2,1);}
@@ -195,9 +205,9 @@ footer{text-align:center;padding:40px 20px 110px;font-size:11px;letter-spacing:4
 <button id="musicBtn" title="Music On/Off">🎵</button>
 <div id="hearts"></div>
 
+<!-- Music: same folder, koi folder nahi -->
 <audio id="bgMusic" loop preload="auto">
   <source src="song.mp3" type="audio/mpeg">
-  <source src="music/song.mp3" type="audio/mpeg">
 </audio>
 
 <!-- HERO -->
@@ -225,7 +235,7 @@ footer{text-align:center;padding:40px 20px 110px;font-size:11px;letter-spacing:4
   </div>
 </section>
 
-<!-- PHOTO GALLERY -->
+<!-- PHOTO GALLERY (same folder) -->
 <section>
   <div class="wrap">
     <div class="sec-head reveal">
@@ -234,16 +244,16 @@ footer{text-align:center;padding:40px 20px 110px;font-size:11px;letter-spacing:4
       <div class="sec-divider"></div>
     </div>
     <div class="gallery">
-      <div class="photo reveal d1"><span class="num">01</span><img src="photos/zap1.jpg" alt="Yaad 1"><div class="cap">Pehli mulaqat 🌸</div></div>
-      <div class="photo reveal d2"><span class="num">02</span><img src="photos/zap2.jpg" alt="Yaad 2"><div class="cap">Wo hansi 😄</div></div>
-      <div class="photo reveal d3"><span class="num">03</span><img src="photos/zap3.jpg" alt="Yaad 3"><div class="cap">Meri jaan ❤️</div></div>
-      <div class="photo reveal d4"><span class="num">04</span><img src="photos/zap4.jpg" alt="Yaad 4"><div class="cap">Best day 🥰</div></div>
-      <div class="photo reveal d1"><span class="num">05</span><img src="photos/zap5.jpg" alt="Yaad 5"><div class="cap">Forever 💞</div></div>
-      <div class="photo reveal d2"><span class="num">06</span><img src="photos/zap6.jpg" alt="Yaad 6"><div class="cap">Tum 🥺</div></div>
-      <div class="photo reveal d3"><span class="num">07</span><img src="photos/zap7.jpg" alt="Yaad 7"><div class="cap">Meri duniya ✨</div></div>
-      <div class="photo reveal d4"><span class="num">08</span><img src="photos/zap8.jpg" alt="Yaad 8"><div class="cap">Sweetest 💗</div></div>
-      <div class="photo reveal d1"><span class="num">09</span><img src="photos/zap9.jpg" alt="Yaad 9"><div class="cap">Bas tum 🌸</div></div>
-      <div class="photo reveal d2"><span class="num">10</span><img src="photos/zap10.jpg" alt="Yaad 10"><div class="cap">Hamesha 💖</div></div>
+      <div class="photo reveal d1"><span class="num">01</span><img src="zap1.jpg" alt="Yaad 1" onerror="imgFallback(this)"><div class="fallback"><div class="fb-emoji">🌸</div><div class="fb-txt">zap1.jpg<br>rakh do isi folder me</div></div><div class="cap">Pehli mulaqat 🌸</div></div>
+      <div class="photo reveal d2"><span class="num">02</span><img src="zap2.jpg" alt="Yaad 2" onerror="imgFallback(this)"><div class="fallback"><div class="fb-emoji">😄</div><div class="fb-txt">zap2.jpg<br>rakh do isi folder me</div></div><div class="cap">Wo hansi 😄</div></div>
+      <div class="photo reveal d3"><span class="num">03</span><img src="zap3.jpg" alt="Yaad 3" onerror="imgFallback(this)"><div class="fallback"><div class="fb-emoji">❤️</div><div class="fb-txt">zap3.jpg<br>rakh do isi folder me</div></div><div class="cap">Meri jaan ❤️</div></div>
+      <div class="photo reveal d4"><span class="num">04</span><img src="zap4.jpg" alt="Yaad 4" onerror="imgFallback(this)"><div class="fallback"><div class="fb-emoji">🥰</div><div class="fb-txt">zap4.jpg<br>rakh do isi folder me</div></div><div class="cap">Best day 🥰</div></div>
+      <div class="photo reveal d1"><span class="num">05</span><img src="zap5.jpg" alt="Yaad 5" onerror="imgFallback(this)"><div class="fallback"><div class="fb-emoji">💞</div><div class="fb-txt">zap5.jpg<br>rakh do isi folder me</div></div><div class="cap">Forever 💞</div></div>
+      <div class="photo reveal d2"><span class="num">06</span><img src="zap6.jpg" alt="Yaad 6" onerror="imgFallback(this)"><div class="fallback"><div class="fb-emoji">🥺</div><div class="fb-txt">zap6.jpg<br>rakh do isi folder me</div></div><div class="cap">Tum 🥺</div></div>
+      <div class="photo reveal d3"><span class="num">07</span><img src="zap7.jpg" alt="Yaad 7" onerror="imgFallback(this)"><div class="fallback"><div class="fb-emoji">✨</div><div class="fb-txt">zap7.jpg<br>rakh do isi folder me</div></div><div class="cap">Meri duniya ✨</div></div>
+      <div class="photo reveal d4"><span class="num">08</span><img src="zap8.jpg" alt="Yaad 8" onerror="imgFallback(this)"><div class="fallback"><div class="fb-emoji">💗</div><div class="fb-txt">zap8.jpg<br>rakh do isi folder me</div></div><div class="cap">Sweetest 💗</div></div>
+      <div class="photo reveal d1"><span class="num">09</span><img src="zap9.jpg" alt="Yaad 9" onerror="imgFallback(this)"><div class="fallback"><div class="fb-emoji">🌸</div><div class="fb-txt">zap9.jpg<br>rakh do isi folder me</div></div><div class="cap">Bas tum 🌸</div></div>
+      <div class="photo reveal d2"><span class="num">10</span><img src="zap10.jpg" alt="Yaad 10" onerror="imgFallback(this)"><div class="fallback"><div class="fb-emoji">💖</div><div class="fb-txt">zap10.jpg<br>rakh do isi folder me</div></div><div class="cap">Hamesha 💖</div></div>
     </div>
   </div>
 </section>
@@ -257,8 +267,8 @@ footer{text-align:center;padding:40px 20px 110px;font-size:11px;letter-spacing:4
       <div class="sec-divider"></div>
     </div>
     <div class="video-box reveal d2">
-      <video controls playsinline preload="metadata">
-        <source src="videos/zap1.mp4" type="video/mp4">
+      <video controls playsinline preload="metadata" onerror="videoFallback(this)">
+        <source src="zap1.mp4" type="video/mp4">
       </video>
     </div>
   </div>
@@ -273,22 +283,20 @@ footer{text-align:center;padding:40px 20px 110px;font-size:11px;letter-spacing:4
       <div class="sec-divider"></div>
     </div>
     <div class="video-grid">
-      <div class="vid reveal d1"><span class="vnum">02</span><video controls playsinline preload="metadata"><source src="videos/zap2.mp4" type="video/mp4"></video><div class="vcap">Wo pal 💫</div></div>
-      <div class="vid reveal d2"><span class="vnum">03</span><video controls playsinline preload="metadata"><source src="videos/zap3.mp4" type="video/mp4"></video><div class="vcap">Tumhari hansi 😄</div></div>
-      <div class="vid reveal d3"><span class="vnum">04</span><video controls playsinline preload="metadata"><source src="videos/zap4.mp4" type="video/mp4"></video><div class="vcap">Yaad 💖</div></div>
-      <div class="vid reveal d4"><span class="vnum">05</span><video controls playsinline preload="metadata"><source src="videos/zap5.mp4" type="video/mp4"></video><div class="vcap">Meri jaan 🥺</div></div>
-      <div class="vid reveal d1"><span class="vnum">06</span><video controls playsinline preload="metadata"><source src="videos/zap6.mp4" type="video/mp4"></video><div class="vcap">Best moment 🌸</div></div>
-      <div class="vid reveal d2"><span class="vnum">07</span><video controls playsinline preload="metadata"><source src="videos/zap7.mp4" type="video/mp4"></video><div class="vcap">Forever 💞</div></div>
-      <div class="vid reveal d3"><span class="vnum">08</span><video controls playsinline preload="metadata"><source src="videos/zap8.mp4" type="video/mp4"></video><div class="vcap">Sweet 🍬</div></div>
-      <div class="vid reveal d4"><span class="vnum">09</span><video controls playsinline preload="metadata"><source src="videos/zap9.mp4" type="video/mp4"></video><div class="vcap">Sirf tum ✨</div></div>
-      <div class="vid reveal d1"><span class="vnum">10</span><video controls playsinline preload="metadata"><source src="videos/zap10.mp4" type="video/mp4"></video><div class="vcap">Hamesha ❤️</div></div>
+      <div class="vid reveal d1"><span class="vnum">02</span><video controls playsinline preload="metadata" onerror="videoFallback(this)"><source src="zap2.mp4" type="video/mp4"></video><div class="vfallback"><div class="fb-emoji">🎬</div><div class="fb-txt">zap2.mp4<br>isi folder me rakho</div></div><div class="vcap">Wo pal 💫</div></div>
+      <div class="vid reveal d2"><span class="vnum">03</span><video controls playsinline preload="metadata" onerror="videoFallback(this)"><source src="zap3.mp4" type="video/mp4"></video><div class="vfallback"><div class="fb-emoji">🎬</div><div class="fb-txt">zap3.mp4<br>isi folder me rakho</div></div><div class="vcap">Tumhari hansi 😄</div></div>
+      <div class="vid reveal d3"><span class="vnum">04</span><video controls playsinline preload="metadata" onerror="videoFallback(this)"><source src="zap4.mp4" type="video/mp4"></video><div class="vfallback"><div class="fb-emoji">🎬</div><div class="fb-txt">zap4.mp4<br>isi folder me rakho</div></div><div class="vcap">Yaad 💖</div></div>
+      <div class="vid reveal d4"><span class="vnum">05</span><video controls playsinline preload="metadata" onerror="videoFallback(this)"><source src="zap5.mp4" type="video/mp4"></video><div class="vfallback"><div class="fb-emoji">🎬</div><div class="fb-txt">zap5.mp4<br>isi folder me rakho</div></div><div class="vcap">Meri jaan 🥺</div></div>
+      <div class="vid reveal d1"><span class="vnum">06</span><video controls playsinline preload="metadata" onerror="videoFallback(this)"><source src="zap6.mp4" type="video/mp4"></video><div class="vfallback"><div class="fb-emoji">🎬</div><div class="fb-txt">zap6.mp4<br>isi folder me rakho</div></div><div class="vcap">Best moment 🌸</div></div>
+      <div class="vid reveal d2"><span class="vnum">07</span><video controls playsinline preload="metadata" onerror="videoFallback(this)"><source src="zap7.mp4" type="video/mp4"></video><div class="vfallback"><div class="fb-emoji">🎬</div><div class="fb-txt">zap7.mp4<br>isi folder me rakho</div></div><div class="vcap">Forever 💞</div></div>
+      <div class="vid reveal d3"><span class="vnum">08</span><video controls playsinline preload="metadata" onerror="videoFallback(this)"><source src="zap8.mp4" type="video/mp4"></video><div class="vfallback"><div class="fb-emoji">🎬</div><div class="fb-txt">zap8.mp4<br>isi folder me rakho</div></div><div class="vcap">Sweet 🍬</div></div>
+      <div class="vid reveal d4"><span class="vnum">09</span><video controls playsinline preload="metadata" onerror="videoFallback(this)"><source src="zap9.mp4" type="video/mp4"></video><div class="vfallback"><div class="fb-emoji">🎬</div><div class="fb-txt">zap9.mp4<br>isi folder me rakho</div></div><div class="vcap">Sirf tum ✨</div></div>
+      <div class="vid reveal d1"><span class="vnum">10</span><video controls playsinline preload="metadata" onerror="videoFallback(this)"><source src="zap10.mp4" type="video/mp4"></video><div class="vfallback"><div class="fb-emoji">🎬</div><div class="fb-txt">zap10.mp4<br>isi folder me rakho</div></div><div class="vcap">Hamesha ❤️</div></div>
     </div>
   </div>
 </section>
 
-<!-- ============================================================
-     MESSAGES 1-7 (OPEN - No Password)
-============================================================ -->
+<!-- MESSAGES 1-7 -->
 <section>
   <div class="wrap">
     <div class="sec-head reveal">
@@ -341,9 +349,7 @@ footer{text-align:center;padding:40px 20px 110px;font-size:11px;letter-spacing:4
   </div>
 </section>
 
-<!-- ============================================================
-     🔒 PASSWORD LOCKED — Messages 8-10 + Sukoon + Bachha + Fav
-============================================================ -->
+<!-- LOCKED SECTION -->
 <section>
   <div class="wrap">
     <div class="sec-head reveal">
@@ -396,8 +402,8 @@ footer{text-align:center;padding:40px 20px 110px;font-size:11px;letter-spacing:4
           <div class="sec-divider"></div>
         </div>
         <div class="video-box">
-          <video controls playsinline preload="metadata">
-            <source src="videos/sukoon.mp4" type="video/mp4">
+          <video controls playsinline preload="metadata" onerror="videoFallback(this)">
+            <source src="sukoon.mp4" type="video/mp4">
           </video>
         </div>
       </div>
@@ -410,9 +416,9 @@ footer{text-align:center;padding:40px 20px 110px;font-size:11px;letter-spacing:4
           <div class="sec-divider"></div>
         </div>
         <div class="video-grid">
-          <div class="vid"><span class="vnum">01</span><video controls playsinline preload="metadata"><source src="videos/bachha1.mp4" type="video/mp4"></video><div class="vcap">Bachha 1 🍼</div></div>
-          <div class="vid"><span class="vnum">02</span><video controls playsinline preload="metadata"><source src="videos/bachha2.mp4" type="video/mp4"></video><div class="vcap">Bachha 2 💕</div></div>
-          <div class="vid"><span class="vnum">03</span><video controls playsinline preload="metadata"><source src="videos/bachha3.mp4" type="video/mp4"></video><div class="vcap">Bachha 3 🥺</div></div>
+          <div class="vid"><span class="vnum">01</span><video controls playsinline preload="metadata" onerror="videoFallback(this)"><source src="bachha1.mp4" type="video/mp4"></video><div class="vfallback"><div class="fb-emoji">🍼</div><div class="fb-txt">bachha1.mp4<br>isi folder me rakho</div></div><div class="vcap">Bachha 1 🍼</div></div>
+          <div class="vid"><span class="vnum">02</span><video controls playsinline preload="metadata" onerror="videoFallback(this)"><source src="bachha2.mp4" type="video/mp4"></video><div class="vfallback"><div class="fb-emoji">💕</div><div class="fb-txt">bachha2.mp4<br>isi folder me rakho</div></div><div class="vcap">Bachha 2 💕</div></div>
+          <div class="vid"><span class="vnum">03</span><video controls playsinline preload="metadata" onerror="videoFallback(this)"><source src="bachha3.mp4" type="video/mp4"></video><div class="vfallback"><div class="fb-emoji">🥺</div><div class="fb-txt">bachha3.mp4<br>isi folder me rakho</div></div><div class="vcap">Bachha 3 🥺</div></div>
         </div>
       </div>
 
@@ -424,14 +430,14 @@ footer{text-align:center;padding:40px 20px 110px;font-size:11px;letter-spacing:4
           <div class="sec-divider"></div>
         </div>
         <div class="gallery">
-          <div class="photo"><span class="num">11</span><img src="photos/fav11.jpg" alt="Fav 11"><div class="cap">Favourite 11 ✨</div></div>
-          <div class="photo"><span class="num">12</span><img src="photos/fav12.jpg" alt="Fav 12"><div class="cap">Favourite 12 💖</div></div>
-          <div class="photo"><span class="num">13</span><img src="photos/fav13.jpg" alt="Fav 13"><div class="cap">Favourite 13 🌸</div></div>
-          <div class="photo"><span class="num">14</span><img src="photos/fav14.jpg" alt="Fav 14"><div class="cap">Favourite 14 🥺</div></div>
-          <div class="photo"><span class="num">15</span><img src="photos/fav15.jpg" alt="Fav 15"><div class="cap">Favourite 15 💞</div></div>
-          <div class="photo"><span class="num">16</span><img src="photos/fav16.jpg" alt="Fav 16"><div class="cap">Favourite 16 💗</div></div>
-          <div class="photo"><span class="num">17</span><img src="photos/fav17.jpg" alt="Fav 17"><div class="cap">Favourite 17 🌷</div></div>
-          <div class="photo"><span class="num">18</span><img src="photos/fav18.jpg" alt="Fav 18"><div class="cap">Favourite 18 ❤️</div></div>
+          <div class="photo"><span class="num">11</span><img src="fav11.jpg" alt="Fav 11" onerror="imgFallback(this)"><div class="fallback"><div class="fb-emoji">✨</div><div class="fb-txt">fav11.jpg</div></div><div class="cap">Favourite 11 ✨</div></div>
+          <div class="photo"><span class="num">12</span><img src="fav12.jpg" alt="Fav 12" onerror="imgFallback(this)"><div class="fallback"><div class="fb-emoji">💖</div><div class="fb-txt">fav12.jpg</div></div><div class="cap">Favourite 12 💖</div></div>
+          <div class="photo"><span class="num">13</span><img src="fav13.jpg" alt="Fav 13" onerror="imgFallback(this)"><div class="fallback"><div class="fb-emoji">🌸</div><div class="fb-txt">fav13.jpg</div></div><div class="cap">Favourite 13 🌸</div></div>
+          <div class="photo"><span class="num">14</span><img src="fav14.jpg" alt="Fav 14" onerror="imgFallback(this)"><div class="fallback"><div class="fb-emoji">🥺</div><div class="fb-txt">fav14.jpg</div></div><div class="cap">Favourite 14 🥺</div></div>
+          <div class="photo"><span class="num">15</span><img src="fav15.jpg" alt="Fav 15" onerror="imgFallback(this)"><div class="fallback"><div class="fb-emoji">💞</div><div class="fb-txt">fav15.jpg</div></div><div class="cap">Favourite 15 💞</div></div>
+          <div class="photo"><span class="num">16</span><img src="fav16.jpg" alt="Fav 16" onerror="imgFallback(this)"><div class="fallback"><div class="fb-emoji">💗</div><div class="fb-txt">fav16.jpg</div></div><div class="cap">Favourite 16 💗</div></div>
+          <div class="photo"><span class="num">17</span><img src="fav17.jpg" alt="Fav 17" onerror="imgFallback(this)"><div class="fallback"><div class="fb-emoji">🌷</div><div class="fb-txt">fav17.jpg</div></div><div class="cap">Favourite 17 🌷</div></div>
+          <div class="photo"><span class="num">18</span><img src="fav18.jpg" alt="Fav 18" onerror="imgFallback(this)"><div class="fallback"><div class="fb-emoji">❤️</div><div class="fb-txt">fav18.jpg</div></div><div class="cap">Favourite 18 ❤️</div></div>
         </div>
       </div>
 
@@ -483,6 +489,24 @@ footer{text-align:center;padding:40px 20px 110px;font-size:11px;letter-spacing:4
 <footer>Made with ❤️ just for you</footer>
 
 <script>
+/* Fallback: photo missing -> pyaara placeholder */
+function imgFallback(img){
+  const parent = img.closest('.photo');
+  if(parent) parent.classList.add('broken');
+}
+/* Fallback: video missing -> pyaara placeholder */
+function videoFallback(video){
+  const parent = video.closest('.vid') || video.closest('.video-box');
+  if(parent) parent.classList.add('broken');
+}
+/* Agar video source load na ho to bhi pakad le */
+document.querySelectorAll('video').forEach(v=>{
+  v.addEventListener('error', ()=>videoFallback(v));
+  v.querySelectorAll('source').forEach(s=>{
+    s.addEventListener('error', ()=>videoFallback(v));
+  });
+});
+
 /* INTRO + MUSIC */
 const intro=document.getElementById('intro');
 const enterBtn=document.getElementById('enterBtn');
@@ -518,12 +542,11 @@ function pauseMusic(){
   setPlayingUI(false);
 }
 
-/* Pehle click par music start — browser autoplay policy safe */
+/* Pehla click kahin bhi -> music start (autoplay policy safe) */
 document.addEventListener('click', (e)=>{
   if(e.target.closest && e.target.closest('#musicBtn')) return;
   startMusic();
 }, {passive:true});
-
 document.addEventListener('touchstart', (e)=>{
   if(e.target.closest && e.target.closest('#musicBtn')) return;
   startMusic();
@@ -537,11 +560,7 @@ enterBtn.addEventListener('click', ()=>{
 
 musicBtn.addEventListener('click', (e)=>{
   e.stopPropagation();
-  if(music.paused){
-    startMusic();
-  } else {
-    pauseMusic();
-  }
+  if(music.paused){ startMusic(); } else { pauseMusic(); }
 });
 
 /* HEARTS */
@@ -578,34 +597,24 @@ document.querySelectorAll('video').forEach(v=>{
   });
 });
 
-/* ============================================================
-   RELATIONSHIP TIMER
-   Start: 12 December 2025, 5:57:00 PM (17:57:00)
-   ============================================================ */
-const START_DATE = new Date(2025, 11, 12, 17, 57, 0, 0); // month 11 = December
+/* TIMER: 12 December 2025, 5:57:00 PM */
+const START_DATE = new Date(2025, 11, 12, 17, 57, 0, 0);
 const START_MS = START_DATE.getTime();
-
-function pad2(n){
-  return String(n).padStart(2,'0');
-}
-
+function pad2(n){ return String(n).padStart(2,'0'); }
 function updateCounter(){
   const now = Date.now();
   let diff = now - START_MS;
   if(diff < 0) diff = 0;
-
   const totalSeconds = Math.floor(diff / 1000);
   const days = Math.floor(totalSeconds / 86400);
   const hours = Math.floor((totalSeconds % 86400) / 3600);
   const mins = Math.floor((totalSeconds % 3600) / 60);
   const secs = totalSeconds % 60;
-
   document.getElementById('days').textContent = days.toLocaleString('en-IN');
   document.getElementById('hours').textContent = pad2(hours);
   document.getElementById('mins').textContent = pad2(mins);
   document.getElementById('secs').textContent = pad2(secs);
 }
-
 updateCounter();
 setInterval(updateCounter, 1000);
 
