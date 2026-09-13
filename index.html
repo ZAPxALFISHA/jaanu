@@ -6,7 +6,7 @@
 <title>For You 💖</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Dancing+Script:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Dancing+Script:wght@600;700&family=Great+Vibes&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
@@ -66,6 +66,7 @@ section{position:relative;z-index:3;padding:110px 22px;}
 .wrap{max-width:1120px;margin:0 auto;}
 .sec-head{text-align:center;margin-bottom:70px;}
 .sec-title{font-family:'Dancing Script',cursive;font-size:clamp(42px,9vw,72px);font-weight:700;line-height:1.1;margin-bottom:16px;background:linear-gradient(120deg,#ff8fa3,#ff4d6d,#ffd6a5,#ff8fa3);background-size:300% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shine 6s linear infinite;}
+.sec-title.great{font-family:'Great Vibes',cursive;font-weight:400;letter-spacing:.5px;}
 .sec-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:#c98a9d;letter-spacing:.5px;}
 .sec-divider{width:80px;height:1px;margin:22px auto 0;background:linear-gradient(90deg,transparent,var(--pink),transparent);position:relative;}
 .sec-divider::before{content:'❦';position:absolute;top:-14px;left:50%;transform:translateX(-50%);color:var(--pink);font-size:18px;background:var(--bg-deep);padding:0 10px;}
@@ -196,6 +197,7 @@ footer{text-align:center;padding:40px 20px 110px;font-size:11px;letter-spacing:4
 
 <audio id="bgMusic" loop preload="auto">
   <source src="song.mp3" type="audio/mpeg">
+  <source src="music/song.mp3" type="audio/mpeg">
 </audio>
 
 <!-- HERO -->
@@ -232,16 +234,16 @@ footer{text-align:center;padding:40px 20px 110px;font-size:11px;letter-spacing:4
       <div class="sec-divider"></div>
     </div>
     <div class="gallery">
-      <div class="photo reveal d1"><span class="num">01</span><img src="zap1.jpg" alt="Yaad 1"><div class="cap">Pehli mulaqat 🌸</div></div>
-      <div class="photo reveal d2"><span class="num">02</span><img src="zap2.jpg" alt="Yaad 2"><div class="cap">Wo hansi 😄</div></div>
-      <div class="photo reveal d3"><span class="num">03</span><img src="zap3.jpg" alt="Yaad 3"><div class="cap">Meri jaan ❤️</div></div>
-      <div class="photo reveal d4"><span class="num">04</span><img src="zap4.jpg" alt="Yaad 4"><div class="cap">Best day 🥰</div></div>
-      <div class="photo reveal d1"><span class="num">05</span><img src="zap5.jpg" alt="Yaad 5"><div class="cap">Forever 💞</div></div>
-      <div class="photo reveal d2"><span class="num">06</span><img src="zap6.jpg" alt="Yaad 6"><div class="cap">Tum 🥺</div></div>
-      <div class="photo reveal d3"><span class="num">07</span><img src="zap7.jpg" alt="Yaad 7"><div class="cap">Meri duniya ✨</div></div>
-      <div class="photo reveal d4"><span class="num">08</span><img src="zap8.jpg" alt="Yaad 8"><div class="cap">Sweetest 💗</div></div>
-      <div class="photo reveal d1"><span class="num">09</span><img src="zap9.jpg" alt="Yaad 9"><div class="cap">Bas tum 🌸</div></div>
-      <div class="photo reveal d2"><span class="num">10</span><img src="zap10.jpg" alt="Yaad 10"><div class="cap">Hamesha 💖</div></div>
+      <div class="photo reveal d1"><span class="num">01</span><img src="photos/zap1.jpg" alt="Yaad 1"><div class="cap">Pehli mulaqat 🌸</div></div>
+      <div class="photo reveal d2"><span class="num">02</span><img src="photos/zap2.jpg" alt="Yaad 2"><div class="cap">Wo hansi 😄</div></div>
+      <div class="photo reveal d3"><span class="num">03</span><img src="photos/zap3.jpg" alt="Yaad 3"><div class="cap">Meri jaan ❤️</div></div>
+      <div class="photo reveal d4"><span class="num">04</span><img src="photos/zap4.jpg" alt="Yaad 4"><div class="cap">Best day 🥰</div></div>
+      <div class="photo reveal d1"><span class="num">05</span><img src="photos/zap5.jpg" alt="Yaad 5"><div class="cap">Forever 💞</div></div>
+      <div class="photo reveal d2"><span class="num">06</span><img src="photos/zap6.jpg" alt="Yaad 6"><div class="cap">Tum 🥺</div></div>
+      <div class="photo reveal d3"><span class="num">07</span><img src="photos/zap7.jpg" alt="Yaad 7"><div class="cap">Meri duniya ✨</div></div>
+      <div class="photo reveal d4"><span class="num">08</span><img src="photos/zap8.jpg" alt="Yaad 8"><div class="cap">Sweetest 💗</div></div>
+      <div class="photo reveal d1"><span class="num">09</span><img src="photos/zap9.jpg" alt="Yaad 9"><div class="cap">Bas tum 🌸</div></div>
+      <div class="photo reveal d2"><span class="num">10</span><img src="photos/zap10.jpg" alt="Yaad 10"><div class="cap">Hamesha 💖</div></div>
     </div>
   </div>
 </section>
@@ -256,7 +258,7 @@ footer{text-align:center;padding:40px 20px 110px;font-size:11px;letter-spacing:4
     </div>
     <div class="video-box reveal d2">
       <video controls playsinline preload="metadata">
-        <source src="zap1.mp4" type="video/mp4">
+        <source src="videos/zap1.mp4" type="video/mp4">
       </video>
     </div>
   </div>
@@ -271,20 +273,22 @@ footer{text-align:center;padding:40px 20px 110px;font-size:11px;letter-spacing:4
       <div class="sec-divider"></div>
     </div>
     <div class="video-grid">
-      <div class="vid reveal d1"><span class="vnum">02</span><video controls playsinline preload="metadata"><source src="zap2.mp4" type="video/mp4"></video><div class="vcap">Wo pal 💫</div></div>
-      <div class="vid reveal d2"><span class="vnum">03</span><video controls playsinline preload="metadata"><source src="zap3.mp4" type="video/mp4"></video><div class="vcap">Tumhari hansi 😄</div></div>
-      <div class="vid reveal d3"><span class="vnum">04</span><video controls playsinline preload="metadata"><source src="zap4.mp4" type="video/mp4"></video><div class="vcap">Yaad 💖</div></div>
-      <div class="vid reveal d4"><span class="vnum">05</span><video controls playsinline preload="metadata"><source src="zap5.mp4" type="video/mp4"></video><div class="vcap">Meri jaan 🥺</div></div>
-      <div class="vid reveal d1"><span class="vnum">06</span><video controls playsinline preload="metadata"><source src="zap6.mp4" type="video/mp4"></video><div class="vcap">Best moment 🌸</div></div>
-      <div class="vid reveal d2"><span class="vnum">07</span><video controls playsinline preload="metadata"><source src="zap7.mp4" type="video/mp4"></video><div class="vcap">Forever 💞</div></div>
-      <div class="vid reveal d3"><span class="vnum">08</span><video controls playsinline preload="metadata"><source src="zap8.mp4" type="video/mp4"></video><div class="vcap">Sweet 🍬</div></div>
-      <div class="vid reveal d4"><span class="vnum">09</span><video controls playsinline preload="metadata"><source src="zap9.mp4" type="video/mp4"></video><div class="vcap">Sirf tum ✨</div></div>
-      <div class="vid reveal d1"><span class="vnum">10</span><video controls playsinline preload="metadata"><source src="zap10.mp4" type="video/mp4"></video><div class="vcap">Hamesha ❤️</div></div>
+      <div class="vid reveal d1"><span class="vnum">02</span><video controls playsinline preload="metadata"><source src="videos/zap2.mp4" type="video/mp4"></video><div class="vcap">Wo pal 💫</div></div>
+      <div class="vid reveal d2"><span class="vnum">03</span><video controls playsinline preload="metadata"><source src="videos/zap3.mp4" type="video/mp4"></video><div class="vcap">Tumhari hansi 😄</div></div>
+      <div class="vid reveal d3"><span class="vnum">04</span><video controls playsinline preload="metadata"><source src="videos/zap4.mp4" type="video/mp4"></video><div class="vcap">Yaad 💖</div></div>
+      <div class="vid reveal d4"><span class="vnum">05</span><video controls playsinline preload="metadata"><source src="videos/zap5.mp4" type="video/mp4"></video><div class="vcap">Meri jaan 🥺</div></div>
+      <div class="vid reveal d1"><span class="vnum">06</span><video controls playsinline preload="metadata"><source src="videos/zap6.mp4" type="video/mp4"></video><div class="vcap">Best moment 🌸</div></div>
+      <div class="vid reveal d2"><span class="vnum">07</span><video controls playsinline preload="metadata"><source src="videos/zap7.mp4" type="video/mp4"></video><div class="vcap">Forever 💞</div></div>
+      <div class="vid reveal d3"><span class="vnum">08</span><video controls playsinline preload="metadata"><source src="videos/zap8.mp4" type="video/mp4"></video><div class="vcap">Sweet 🍬</div></div>
+      <div class="vid reveal d4"><span class="vnum">09</span><video controls playsinline preload="metadata"><source src="videos/zap9.mp4" type="video/mp4"></video><div class="vcap">Sirf tum ✨</div></div>
+      <div class="vid reveal d1"><span class="vnum">10</span><video controls playsinline preload="metadata"><source src="videos/zap10.mp4" type="video/mp4"></video><div class="vcap">Hamesha ❤️</div></div>
     </div>
   </div>
 </section>
 
-<!-- MESSAGES 1-7 -->
+<!-- ============================================================
+     MESSAGES 1-7 (OPEN - No Password)
+============================================================ -->
 <section>
   <div class="wrap">
     <div class="sec-head reveal">
@@ -337,7 +341,9 @@ footer{text-align:center;padding:40px 20px 110px;font-size:11px;letter-spacing:4
   </div>
 </section>
 
-<!-- PASSWORD LOCKED SECTION -->
+<!-- ============================================================
+     🔒 PASSWORD LOCKED — Messages 8-10 + Sukoon + Bachha + Fav
+============================================================ -->
 <section>
   <div class="wrap">
     <div class="sec-head reveal">
@@ -391,7 +397,7 @@ footer{text-align:center;padding:40px 20px 110px;font-size:11px;letter-spacing:4
         </div>
         <div class="video-box">
           <video controls playsinline preload="metadata">
-            <source src="sukoon.mp4" type="video/mp4">
+            <source src="videos/sukoon.mp4" type="video/mp4">
           </video>
         </div>
       </div>
@@ -404,28 +410,28 @@ footer{text-align:center;padding:40px 20px 110px;font-size:11px;letter-spacing:4
           <div class="sec-divider"></div>
         </div>
         <div class="video-grid">
-          <div class="vid"><span class="vnum">01</span><video controls playsinline preload="metadata"><source src="bachha1.mp4" type="video/mp4"></video><div class="vcap">Bachha 1 🍼</div></div>
-          <div class="vid"><span class="vnum">02</span><video controls playsinline preload="metadata"><source src="bachha2.mp4" type="video/mp4"></video><div class="vcap">Bachha 2 💕</div></div>
-          <div class="vid"><span class="vnum">03</span><video controls playsinline preload="metadata"><source src="bachha3.mp4" type="video/mp4"></video><div class="vcap">Bachha 3 🥺</div></div>
+          <div class="vid"><span class="vnum">01</span><video controls playsinline preload="metadata"><source src="videos/bachha1.mp4" type="video/mp4"></video><div class="vcap">Bachha 1 🍼</div></div>
+          <div class="vid"><span class="vnum">02</span><video controls playsinline preload="metadata"><source src="videos/bachha2.mp4" type="video/mp4"></video><div class="vcap">Bachha 2 💕</div></div>
+          <div class="vid"><span class="vnum">03</span><video controls playsinline preload="metadata"><source src="videos/bachha3.mp4" type="video/mp4"></video><div class="vcap">Bachha 3 🥺</div></div>
         </div>
       </div>
 
-      <!-- FAVOURITES VIDEOS (fav1.mp4 to fav8.mp4) -->
+      <!-- FAV PHOTOS -->
       <div class="locked-block">
         <div class="sec-head">
           <h2 class="sec-title">Mere Favourites 💖</h2>
           <p class="sec-sub">Jo sabse zyada khaas hain</p>
           <div class="sec-divider"></div>
         </div>
-        <div class="video-grid">
-          <div class="vid"><span class="vnum">01</span><video controls playsinline preload="metadata"><source src="fav1.mp4" type="video/mp4"></video><div class="vcap">Favourite 1 ✨</div></div>
-          <div class="vid"><span class="vnum">02</span><video controls playsinline preload="metadata"><source src="fav2.mp4" type="video/mp4"></video><div class="vcap">Favourite 2 💖</div></div>
-          <div class="vid"><span class="vnum">03</span><video controls playsinline preload="metadata"><source src="fav3.mp4" type="video/mp4"></video><div class="vcap">Favourite 3 🌸</div></div>
-          <div class="vid"><span class="vnum">04</span><video controls playsinline preload="metadata"><source src="fav4.mp4" type="video/mp4"></video><div class="vcap">Favourite 4 🥺</div></div>
-          <div class="vid"><span class="vnum">05</span><video controls playsinline preload="metadata"><source src="fav5.mp4" type="video/mp4"></video><div class="vcap">Favourite 5 💞</div></div>
-          <div class="vid"><span class="vnum">06</span><video controls playsinline preload="metadata"><source src="fav6.mp4" type="video/mp4"></video><div class="vcap">Favourite 6 💗</div></div>
-          <div class="vid"><span class="vnum">07</span><video controls playsinline preload="metadata"><source src="fav7.mp4" type="video/mp4"></video><div class="vcap">Favourite 7 🌷</div></div>
-          <div class="vid"><span class="vnum">08</span><video controls playsinline preload="metadata"><source src="fav8.mp4" type="video/mp4"></video><div class="vcap">Favourite 8 ❤️</div></div>
+        <div class="gallery">
+          <div class="photo"><span class="num">11</span><img src="photos/fav11.jpg" alt="Fav 11"><div class="cap">Favourite 11 ✨</div></div>
+          <div class="photo"><span class="num">12</span><img src="photos/fav12.jpg" alt="Fav 12"><div class="cap">Favourite 12 💖</div></div>
+          <div class="photo"><span class="num">13</span><img src="photos/fav13.jpg" alt="Fav 13"><div class="cap">Favourite 13 🌸</div></div>
+          <div class="photo"><span class="num">14</span><img src="photos/fav14.jpg" alt="Fav 14"><div class="cap">Favourite 14 🥺</div></div>
+          <div class="photo"><span class="num">15</span><img src="photos/fav15.jpg" alt="Fav 15"><div class="cap">Favourite 15 💞</div></div>
+          <div class="photo"><span class="num">16</span><img src="photos/fav16.jpg" alt="Fav 16"><div class="cap">Favourite 16 💗</div></div>
+          <div class="photo"><span class="num">17</span><img src="photos/fav17.jpg" alt="Fav 17"><div class="cap">Favourite 17 🌷</div></div>
+          <div class="photo"><span class="num">18</span><img src="photos/fav18.jpg" alt="Fav 18"><div class="cap">Favourite 18 ❤️</div></div>
         </div>
       </div>
 
@@ -454,15 +460,15 @@ footer{text-align:center;padding:40px 20px 110px;font-size:11px;letter-spacing:4
 <section>
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2 class="sec-title">Hum Saath Hain</h2>
-      <p class="sec-sub">Aur bahut saal aur… 💞</p>
+      <h2 class="sec-title great">Aur bahut saal aur... 💖</h2>
+      <p class="sec-sub">12 December 2025, shaam 5:57 se…</p>
       <div class="sec-divider"></div>
     </div>
     <div class="counter reveal d2">
       <div class="cbox"><span class="num" id="days">0</span><div class="lab">Din</div></div>
-      <div class="cbox"><span class="num" id="hours">0</span><div class="lab">Ghante</div></div>
-      <div class="cbox"><span class="num" id="mins">0</span><div class="lab">Minute</div></div>
-      <div class="cbox"><span class="num" id="secs">0</span><div class="lab">Second</div></div>
+      <div class="cbox"><span class="num" id="hours">00</span><div class="lab">Ghante</div></div>
+      <div class="cbox"><span class="num" id="mins">00</span><div class="lab">Minute</div></div>
+      <div class="cbox"><span class="num" id="secs">00</span><div class="lab">Second</div></div>
     </div>
   </div>
 </section>
@@ -483,16 +489,59 @@ const enterBtn=document.getElementById('enterBtn');
 const music=document.getElementById('bgMusic');
 const musicBtn=document.getElementById('musicBtn');
 
-enterBtn.addEventListener('click',()=>{
+let musicStarted = false;
+
+function setPlayingUI(isPlaying){
+  if(isPlaying){
+    musicBtn.classList.add('playing');
+    musicBtn.textContent='🎵';
+  } else {
+    musicBtn.classList.remove('playing');
+    musicBtn.textContent='🔇';
+  }
+}
+
+function startMusic(){
+  if(musicStarted) return;
+  music.volume = 0.65;
+  music.play().then(()=>{
+    musicStarted = true;
+    setPlayingUI(true);
+  }).catch(()=>{
+    setPlayingUI(false);
+  });
+}
+
+function pauseMusic(){
+  music.pause();
+  musicStarted = false;
+  setPlayingUI(false);
+}
+
+/* Pehle click par music start — browser autoplay policy safe */
+document.addEventListener('click', (e)=>{
+  if(e.target.closest && e.target.closest('#musicBtn')) return;
+  startMusic();
+}, {passive:true});
+
+document.addEventListener('touchstart', (e)=>{
+  if(e.target.closest && e.target.closest('#musicBtn')) return;
+  startMusic();
+}, {passive:true});
+
+enterBtn.addEventListener('click', ()=>{
   intro.classList.add('hide');
-  music.volume=0.65;
-  music.play().then(()=>{musicBtn.classList.add('playing');})
-  .catch(()=>{musicBtn.textContent='🔇';});
-  setTimeout(()=>{intro.style.display='none';},1300);
+  startMusic();
+  setTimeout(()=>{ intro.style.display='none'; }, 1300);
 });
-musicBtn.addEventListener('click',()=>{
-  if(music.paused){music.play();musicBtn.classList.add('playing');musicBtn.textContent='🎵';}
-  else{music.pause();musicBtn.classList.remove('playing');musicBtn.textContent='🔇';}
+
+musicBtn.addEventListener('click', (e)=>{
+  e.stopPropagation();
+  if(music.paused){
+    startMusic();
+  } else {
+    pauseMusic();
+  }
 });
 
 /* HEARTS */
@@ -529,23 +578,36 @@ document.querySelectorAll('video').forEach(v=>{
   });
 });
 
-/* COUNTER */
-const START_DATE=new Date(2023,0,1,0,0,0);
-function updateCounter(){
-  const now=new Date();
-  const diff=now-START_DATE;
-  if(diff<0)return;
-  const secs=Math.floor(diff/1000);
-  const mins=Math.floor(secs/60);
-  const hours=Math.floor(mins/60);
-  const days=Math.floor(hours/24);
-  document.getElementById('days').textContent=days.toLocaleString('en-IN');
-  document.getElementById('hours').textContent=(hours%24);
-  document.getElementById('mins').textContent=(mins%60);
-  document.getElementById('secs').textContent=(secs%60);
+/* ============================================================
+   RELATIONSHIP TIMER
+   Start: 12 December 2025, 5:57:00 PM (17:57:00)
+   ============================================================ */
+const START_DATE = new Date(2025, 11, 12, 17, 57, 0, 0); // month 11 = December
+const START_MS = START_DATE.getTime();
+
+function pad2(n){
+  return String(n).padStart(2,'0');
 }
+
+function updateCounter(){
+  const now = Date.now();
+  let diff = now - START_MS;
+  if(diff < 0) diff = 0;
+
+  const totalSeconds = Math.floor(diff / 1000);
+  const days = Math.floor(totalSeconds / 86400);
+  const hours = Math.floor((totalSeconds % 86400) / 3600);
+  const mins = Math.floor((totalSeconds % 3600) / 60);
+  const secs = totalSeconds % 60;
+
+  document.getElementById('days').textContent = days.toLocaleString('en-IN');
+  document.getElementById('hours').textContent = pad2(hours);
+  document.getElementById('mins').textContent = pad2(mins);
+  document.getElementById('secs').textContent = pad2(secs);
+}
+
 updateCounter();
-setInterval(updateCounter,1000);
+setInterval(updateCounter, 1000);
 
 /* PASSWORD */
 const PASSWORDS=['kaleshixaurat'];
